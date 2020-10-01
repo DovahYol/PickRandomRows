@@ -4,6 +4,6 @@
 cmake_minimum_required (VERSION 3.5)
 
 # Add source to this project's executable.
-add_executable (PickRandomRows "PickRandomRows.cpp" "PickRandomRows.h")
+add_executable (PickRandomRows_bin "PickRandomRows.cpp" "PickRandomRows.h")
 
 # TODO: Add tests and install targets if needed.
