@@ -50,14 +50,14 @@ int main(int argc, char* argv[])
 	
 	int counter = 0;
 	for (int i = 0; i < originalRowNum; i++) {
-		int rowNum;
-		inFile.read(reinterpret_cast<char*>(&rowNum), 4);
-		vector<int8_t> vec(rowNum);
-		inFile.read(reinterpret_cast<char*>(vec.data()), rowNum * sizeof(int8_t));
+		int colNum;
+		inFile.read(reinterpret_cast<char*>(&colNum), 4);
+		vector<int8_t> vec(colNum);
+		inFile.read(reinterpret_cast<char*>(vec.data()), colNum * sizeof(int8_t));
 
 		if (my_set.count(i) > 0) {
-			outFile.write(reinterpret_cast<char*>(&rowNum), 4);
-			outFile.write(reinterpret_cast<char*>(vec.data()), rowNum * sizeof(int8_t));
+			outFile.write(reinterpret_cast<char*>(&colNum), 4);
+			outFile.write(reinterpret_cast<char*>(vec.data()), colNum * sizeof(int8_t));
 			counter++;
 		}
 	}
